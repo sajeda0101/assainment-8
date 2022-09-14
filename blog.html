@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="blog.css">
+</head>
+<body>
+    <header>
+     <nav>
+        <ul class="nav-menu">
+            <li>Home</li>
+            <li>About</li>
+            <li>Blog
+                <ul class="dropdown">
+                    <a href="#blog1">Local VS Session Storage</a><br>
+                    <a href="#blog2">Global VS Block Scope</a><br>
+                    <a href="#blog3">Event Loop</a><br>
+                    <a href="#blog4">Undefined</a>
+                </ul>
+            </li>
+            <li>Contact</li>
+        </ul>
+     </nav>
+    </header>
+    <main>
+ <section id="blog1">
+     <h1>Difference between Local storage and Session Storage</h1>
+    <div class="blog-item">
+       <h2> <strong>Session Storage:</strong> <span>Session storage is unique to each browser tab. If you open a new tab and navigate to the same site, you'll start a new session with its own storage. However, if you use a "duplicate tab" feature in your browser, that may reuse the same session. You can't rely too much on the specific details of a "session". Instead, focus on the core concept: session storage is temporary.
+      
+      They store key/value pairs for a particular domain.
+        The values stored may only be strings.
+        They have a limit of around 5MB of storage space.For both local storage and session storage, you can set, get, remove, and clear items using the appropriate methods. </span></h2>
+       
+       <h2><strong>Local Storage: </strong><span>Local storage maintains data across all instances of a site, whether they're in different tabs or windows. It is also permanent, so the data won't disappear when you close your browser.When you open a website that previously used local storage, it will always have access to that stored data.persists the storage across browser sessions. So even if the domain is opened in a new tab, or the browser is closed and reopened, the storage is saved. There is no expiration.For both local storage and session storage, you can set, get, remove, and clear items using the appropriate methods.</span></h2>
+
+    </div>
+ </section>
+ <section id="blog2">
+    <h1>Difference between global scope and local scope</h1>
+    <div class="blog-item">
+ <h2><strong>Global Scope: <span>The variables defined outside of any function or curly brackets are known as global variables and have global scope. Global scope means that the variables can be accessed from any part of that program, any function or conditional state can access that variable.
+
+ </span><br>
+Example:<br>
+<span>var name = "linuxHint";<br>
+
+    function printName(){
+    // the variable can be accessed inside here<br>
+    console.log("This tutorial is by "+name);
+    }<br>
+    
+    printName();</span></strong></h2>
+ <h2><strong>Block Scope: <span>Block scope is also a sub-type of local scope. The block scope can be defined as the scope of the variables inside the curly brackets {}. Now, these curly brackets can be of loops, or conditional statements, or something else. You are only allowed to refer to these variables from within the curly brackets {}.</span><br>
+Example<br>
+<span>function addition() {
+    {
+      let a = 10;
+      const b = 5;
+    }
+  }</span></strong></h2>
+    </div>
+ </section>
+ <section id="blog3">
+     <h1>JavaScript Event Loop</h1>
+    <div class="blog-item">
+        <h2><strong>Event Loop:</strong><span>The event loop is the secret behind JavaScript’s asynchronous programming. JS executes all operations on a single thread, but using a few smart data structures, it gives us the illusion of multi-threading. Let’s take a look at what happens on the back-end.JavaScript has a runtime model based on an event loop, which is responsible for executing the code, collecting and processing events, and executing queued sub-tasks. This model is quite different from models in other languages like C and Java.</span></h2>
+    </div>
+ </section>
+ <section id="blog4">
+    <h1>When we get undefined</h1>
+    <div class="blog-item">
+        <h2><strong>Undefined:</strong><span>Undefined value primitive value is used when a variable has not been assigned a value.
+
+            The standard clearly defines that you will receive undefined when accessing uninitialized variables, non-existing object properties, non-existing array elements, and alike.
+        <ul>
+            <li>ndefined type is a type whose sole value is the undefined value.</li>
+            <li>A declared variable but not yet assigned with a value (uninitialized) is by default undefined.</li>
+            <li>or a non-existing array element </li>
+            <li>Variable is declared and not yet assigned with a value. Accessing the variable evaluates to undefined.</li>
+        </ul></span></h2>
+    </div>
+ </section>
+    </main>
+    <header>
+
+    </header>
+
+</body>
+</html>

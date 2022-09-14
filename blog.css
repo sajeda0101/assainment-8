@@ -1,0 +1,62 @@
+nav{
+    position: relative;
+    background-color: lightgrey;
+    padding-bottom: 85px;
+}
+
+.nav-menu{
+ 
+    padding: 50px;
+   margin: 5px 220px;
+    display: flex;
+    font-size: 30px;
+    list-style: none;
+
+}
+.nav-menu li{
+        margin-left: 100px;
+        color: brown
+      
+}
+.nav-menu li:hover{
+ background-color: lavender;
+ padding: 2px 4px;
+ border: 1px solid green;
+ border-radius: 5px;
+ 
+}
+.nav-menu:hover .dropdown{
+    display: block;
+
+}
+.dropdown{
+    display: none;
+ position: absolute;
+}
+.dropdown a{
+    font-size: 20px;
+    text-decoration: none;
+   background-color:aliceblue;
+   padding: 5px;
+}
+.blog-item{
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: aliceblue;
+    padding: 50px;
+    border: 3px solid rgb(252, 157, 140);
+    border-radius: 10px;
+}
+h1{
+    text-align: center;
+   margin-top: 200px;
+    text-decoration:underline;
+}
+
+h2{
+    font-size: 25px;
+}
+span{
+    font-size: 22px;
+    font-weight: lighter;
+}
