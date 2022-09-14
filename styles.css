@@ -63,8 +63,8 @@ body {
 }
 #result {
   position: fixed;
-  top: 10%; 
-  left: 10%;
+  top: 50%; 
+  left: 50%;
   transform: translate(-50%, -50%);
   height: 250px;
   width: 400px;
@@ -163,7 +163,7 @@ button {
     rgba(255, 255, 255, 0.1) 0.18%,
     rgba(255, 255, 255, 0.05) 99.85%
   );
-  backdrop-filter: blur(5px);
+  /* backdrop-filter: blur(2px); */
   margin-bottom: 30px;
 }
 
@@ -179,14 +179,35 @@ button {
   width: 100%;
   position: fixed;
   top: 0;
+  
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 768px) {
   .box-container {
     padding: 0 20px;
     width: 100%;
   }
   .card {
     flex-direction: column;
+  
   }
+}
+
+@media  only screen and (min-width:1024px) {
+  .box-container{
+    padding: 10px;
+    width: 70%;
+  }
+  #histories{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    column-gap: 10px;
+    row-gap: 15px;
+  }
+  .card{
+
+    display: grid;;
+    grid-template-columns: repeat(1,1fr);
+  } 
+   
 }
