@@ -27,7 +27,7 @@ const typeController = (e) => {
   // Handle backspace press
   if (newLetter == "Backspace") {
     userText = userText.slice(0, userText.length - 1);
-    errorCount++
+    errorCount++;
     return display.removeChild(display.lastChild);
   }
 
@@ -138,6 +138,7 @@ displayHistory();
 setInterval(() => {
   const currentTime = new Date().getTime();
   const timeSpent = parseInt((currentTime - startTime)/1000);
+  console.log(timeSpent)
 
   document.getElementById("show-time").innerHTML = `${startTime ? timeSpent : 0} seconds`;
 }, 1000);
