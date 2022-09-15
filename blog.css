@@ -51,6 +51,7 @@ h1{
     text-align: center;
    margin-top: 200px;
     text-decoration:underline;
+    
 }
 
 h2{
@@ -59,4 +60,14 @@ h2{
 span{
     font-size: 22px;
     font-weight: lighter;
+}
+#footer{
+    background-color:black;
+    padding: 10px;
+    margin-top: 40px;
+    color: white;
+    font-size: 30px;
+}
+p{
+    text-align: center;
 }
