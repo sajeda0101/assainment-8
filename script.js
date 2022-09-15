@@ -5,9 +5,10 @@ const countdownOverlay = document.getElementById("countdown");
 const resultModal = document.getElementById("result");
 const modalBackground = document.getElementById("modal-background");
 
-// variablesq23y
+// variables
 let userText = "";
 let errorCount = 0;
+
 let startTime;
 let questionText = "";
 
@@ -22,10 +23,10 @@ fetch("./texts.json")
 // checks the user typed character and displays accordingly
 const typeController = (e) => {
   const newLetter = e.key;
-
   // Handle backspace press
   if (newLetter == "Backspace") {
     userText = userText.slice(0, userText.length - 1);
+    errorCount++
     return display.removeChild(display.lastChild);
   }
 
@@ -35,12 +36,14 @@ const typeController = (e) => {
 
   // if it is not a valid character like Control/Alt then skip displaying anything
   if (!validLetters.includes(newLetter)) {
-    return;
+   return;
   }
 
   userText += newLetter;
 
+ 
   const newLetterCorrect = validate(newLetter);
+  // console.log(newLetterCorrect)
 
   if (newLetterCorrect) {
     display.innerHTML += `<span class="green">${newLetter === " " ? "▪" : newLetter}</span>`;
@@ -60,15 +63,15 @@ const validate = (key) => {
   }
   return false;
 };
-
 // FINISHED TYPING
 const gameOver = () => {
   document.removeEventListener("keydown", typeController);
   // the current time is the finish time
   // so total time taken is current time - start time
   const finishTime = new Date().getTime();
-  const timeTaken = (finishTime - startTime) / 1000;
-
+  const timeTaken = parseInt((finishTime - startTime) / 1000);
+  
+  
   // show result modal
   resultModal.innerHTML = "";
   resultModal.classList.toggle("hidden");
@@ -79,12 +82,13 @@ const gameOver = () => {
   display.classList.add("inactive");
   // show result
   resultModal.innerHTML += `
-    <h1>Finished!</h1>
-    <p>You took: <span class="bold">${timeTaken}</span> seconds</p>
-    <p>You made <span class="bold red">${errorCount}</span> mistakes</p>
-    <button onclick="closeModal()">Close</button>
+  <h1>Finished!</h1>
+  <p>You took: <span class="bold">${timeTaken}</span> seconds</p>
+  <p>You made <span class="bold red">${errorCount}</span> mistakes</p>
+  <button onclick="closeModal()">Close</button>
   `;
-
+  
+  // console.log(errorCount)
   addHistory(questionText, timeTaken, errorCount);
 
   // restart everything
@@ -132,8 +136,7 @@ displayHistory();
 // Show typing time spent
 setInterval(() => {
   const currentTime = new Date().getTime();
-  const timeSpent = (currentTime - startTime) / 1000;
-
+  const timeSpent = parseInt((currentTime - startTime)/1000);
 
   document.getElementById("show-time").innerHTML = `${startTime ? timeSpent : 0} seconds`;
 }, 1000);
